@@ -6,7 +6,7 @@ sub vcl_recv {
 
 
 sub vcl_backend_response {
-    set beresp.ttl = 1000000d;
+    set beresp.ttl = 1d;
     unset beresp.http.cookie;
     unset beresp.http.Set-Cookie;
     unset beresp.http.Cache-Control;

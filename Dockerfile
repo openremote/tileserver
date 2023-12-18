@@ -1,5 +1,6 @@
 # Adds varnish-cache to the container to improve raster tile serving
-FROM klokantech/tileserver-gl
+FROM maptiler/tileserver-gl
+USER root
 MAINTAINER support@openremote.io
 RUN mkdir -p /server
 WORKDIR /server
@@ -20,3 +21,4 @@ ENTRYPOINT ["/bin/bash", "/start.sh"]
 
 WORKDIR /data
 CMD ["-c", "/server/config.json"]
+
